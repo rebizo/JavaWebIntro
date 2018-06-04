@@ -1,5 +1,14 @@
 = Java Web Intro
 
+== Базовые параметры
+* конфигурация SpringBoot - src/main/resources/application.yaml
+* администратор приложения
+    ** логин: root
+    ** пароль: 123456
+* оператор приложения
+    ** логин: operator
+    ** пароль: 123456
+
 == Рекомендации к используемым средствам
 
 * OS - Linux Ubuntu LTS
