@@ -70,3 +70,23 @@ CREATE TABLE permissions                            --// сущность для
   PRIMARY KEY (id)
 );
 
+CREATE TABLE carowners
+(
+owner_id           BIGINT AUTO_INCREMENT NOT NULL,             -- // уникальный идентификатор
+name               CHARACTER VARYING NOT NULL UNIQUE,          -- // имя водителя
+surname            CHARACTER VARYING NOT NULL UNIQUE,          -- // фамилия водителя
+role               CHARACTER VARYING NOT NULL UNIQUE,          -- // тип клиента
+PRIMARY KEY (owner_id)                                         -- // ?????????????
+);
+
+CREATE TABLE cars
+(
+id                 BIGINT AUTO_INCREMENT NOT NULL,            -- // уникальный идентификатор
+firm               CHARACTER VARYING NOT NULL UNIQUE,         -- // фирма
+cartype            CHARACTER VARYING NOT NULL UNIQUE,         -- // тип
+places             INT NOT NULL,                              -- // количество мест
+owner_id           INT NOT NULL,                              -- // количество мест
+PRIMARY KEY (id),                                            -- // ?????????????
+FOREIGN KEY (owner_id) REFERENCES carowners (owner_id)        -- // ?????????????
+);
+
